@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import VueMDCAdapter from 'vue-mdc-adapter';
 import './hr-dashboard.scss';
+// eslint-disable-next-line
 import App from './App';
 import router from './router';
 

@@ -15,11 +15,12 @@
       <mdc-top-app-bar
         title="Page Title"
         event="toggle-drawer"
+        iconClasses="fas fa-bars"
         fixed
       >
         <mdc-top-app-bar-action
           @click="showHelp"
-          icon="help"
+          iconClasses="far fa-question-circle"
         />
       </mdc-top-app-bar>
       <main class="content" >
@@ -34,6 +35,7 @@ export default {
   name: 'App',
   methods: {
     showHelp() {
+      // eslint-disable-next-line
       console.log('show help');
     },
   },

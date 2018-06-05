@@ -24,6 +24,8 @@ module.exports = {
   rules: {
     // allow async-await
     'generator-star-spacing': 'off',
+    //work with mdc vue specifics
+    'vue/attribute-hyphenation': [2, 'always', { 'ignore': ['iconClasses'] }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }
