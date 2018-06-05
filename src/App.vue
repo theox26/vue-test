@@ -15,12 +15,12 @@
       <mdc-top-app-bar
         title="Page Title"
         event="toggle-drawer"
-        iconClasses="fas fa-bars"
         fixed
       >
         <mdc-top-app-bar-action
           @click="showHelp"
-          iconClasses="far fa-question-circle"
+          icon="help"
+          iconClasses="fa fa-question-circle-o"
         />
       </mdc-top-app-bar>
       <main class="content" >
@@ -43,6 +43,8 @@ export default {
 </script>
 
 <style>
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
