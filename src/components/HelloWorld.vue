@@ -84,18 +84,18 @@
 </template>
 
 <script>
-import VueMDCTypography from 'vue-mdc-adapter/dist/typography'
-import VueMDCButton from 'vue-mdc-adapter/dist/button'
+import VueMDCTypography from 'vue-mdc-adapter/dist/typography';
+import VueMDCButton from 'vue-mdc-adapter/dist/button';
 
 export default {
   name: 'HelloWorld',
   mixins: [VueMDCTypography, VueMDCButton],
-  data () {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
+      msg: 'Welcome to Your Vue.js App',
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

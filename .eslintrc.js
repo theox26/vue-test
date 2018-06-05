@@ -13,7 +13,8 @@ module.exports = {
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
     'plugin:vue/strongly-recommended', 
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard'
+    // https://github.com/airbnb/javascript
+    'airbnb'
   ],
   // required to lint *.vue files
   plugins: [

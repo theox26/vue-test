@@ -1,14 +1,43 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <mdc-layout-app>
+      <mdc-drawer
+        slot="drawer"
+        toggle-on="toggle-drawer"
+        persistent
+      >
+        <mdc-drawer-list>
+          <mdc-drawer-item start-icon="inbox">Inbox</mdc-drawer-item>
+          <mdc-drawer-item start-icon="send">Sent Mail</mdc-drawer-item>
+          <mdc-drawer-item start-icon="drafts">Drafts</mdc-drawer-item>
+        </mdc-drawer-list>
+      </mdc-drawer>
+      <mdc-top-app-bar
+        title="Page Title"
+        event="toggle-drawer"
+        fixed
+      >
+        <mdc-top-app-bar-action
+          @click="showHelp"
+          icon="help"
+        />
+      </mdc-top-app-bar>
+      <main class="content" >
+        <router-view/>
+      </main>
+    </mdc-layout-app>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
-}
+  name: 'App',
+  methods: {
+    showHelp() {
+      console.log('show help');
+    },
+  },
+};
 </script>
 
 <style>
@@ -18,6 +47,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 </style>
