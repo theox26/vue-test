@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-        <router-view/>
+          <router-view/>
   </div>
 </template>
 
 <script>
+import { FontAwesomeIcon, FontAwesomeLayers } from '@fortawesome/vue-fontawesome';
+
 export default {
   name: 'App',
-  methods: {
-    showHelp() {
-      // eslint-disable-next-line
-      console.log('show help');
-    },
+  components: {
+    FontAwesomeIcon,
+    FontAwesomeLayers,
   },
 };
 </script>
