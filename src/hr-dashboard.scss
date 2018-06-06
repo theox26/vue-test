@@ -1,9 +1,4 @@
-$mdc-theme-primary: #212121;
-$mdc-theme-accent: #41b883;
-$mdc-theme-background: #fff;
-$fa-font-path:   "./assets/webfonts";
 
 @import "./scss/fontawesome.scss";
 @import "./scss/fa-solid.scss";
 @import "./scss/fa-brands.scss";
-@import 'vue-mdc-adapter/dist/styles';

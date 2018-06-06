@@ -1,95 +1,112 @@
 <template>
   <div class="hello">
-    <mdc-headline>{{ msg }}</mdc-headline>
-    <mdc-title>Essential Links</mdc-title>
+    <h2>{{ msg }}</h2>
+    <h4>Essential Links</h4>
     <ul>
       <li>
-        <mdc-button
+        <a
           href="https://vuejs.org"
           target="_blank"
         >
           Core Docs
-        </mdc-button>
+        </a>
       </li>
       <li>
-        <mdc-button
+        <a
           href="https://forum.vuejs.org"
           target="_blank"
         >
           Forum
-        </mdc-button>
+        </a>
       </li>
       <li>
-        <mdc-button
+        <a
           href="https://chat.vuejs.org"
           target="_blank"
         >
           Community Chat
-        </mdc-button>
+        </a>
       </li>
       <li>
-        <mdc-button
+        <a
           href="https://twitter.com/vuejs"
           target="_blank"
         >
           Twitter
-        </mdc-button>
+        </a>
       </li>
       <br>
       <li>
-        <mdc-button
+        <a
           href="http://vuejs-templates.github.io/webpack/"
           target="_blank"
         >
           Docs for This Template
-        </mdc-button>
+        </a>
       </li>
     </ul>
-    <mdc-title>Ecosystem</mdc-title>
+    <h4>Ecosystem</h4>
     <ul>
       <li>
-        <mdc-button
+        <a
           href="http://router.vuejs.org/"
           target="_blank"
         >
           vue-router
-        </mdc-button>
+        </a>
       </li>
       <li>
-        <mdc-button
+        <a
           href="http://vuex.vuejs.org/"
           target="_blank"
         >
           vuex
-        </mdc-button>
+        </a>
       </li>
       <li>
-        <mdc-button
+        <a
           href="http://vue-loader.vuejs.org/"
           target="_blank"
         >
           vue-loader
-        </mdc-button>
+        </a>
       </li>
       <li>
-        <mdc-button
+        <a
           href="https://github.com/vuejs/awesome-vue"
           target="_blank"
         >
           awesome-vue
-        </mdc-button>
+        </a>
       </li>
     </ul>
+    <el-button
+      @click="done"
+    >
+      <font-awesome-icon :icon="['fas', 'clipboard-check']" />
+      Done
+    </el-button>
   </div>
 </template>
 
 <script>
-import VueMDCTypography from 'vue-mdc-adapter/dist/typography';
-import VueMDCButton from 'vue-mdc-adapter/dist/button';
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 
 export default {
   name: 'HelloWorld',
-  mixins: [VueMDCTypography, VueMDCButton],
+  methods: {
+    done() {
+      this.$notify({
+        title: 'It works!',
+        type: 'success',
+        message: 'We\'ve laid the ground work for you. It\'s time for you to build something epic!',
+        duration: 5000,
+      });
+    },
+  },
+  components: {
+    FontAwesomeIcon,
+  },
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
