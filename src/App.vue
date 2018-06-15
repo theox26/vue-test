@@ -81,6 +81,7 @@
 </template>
 
 <script>
+import { FontAwesomeIcon, FontAwesomeLayers } from '@fortawesome/vue-fontawesome';
 import LeftNavMenu from './components/LeftNavGroup.vue';
 import LeftNavButton from './components/LeftNavButton.vue';
 
@@ -92,6 +93,8 @@ export default {
     };
   },
   components: {
+    FontAwesomeIcon,
+    FontAwesomeLayers,
     LeftNavMenu,
     LeftNavButton,
   },

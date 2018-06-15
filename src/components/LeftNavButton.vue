@@ -3,9 +3,11 @@
     <font-awesome-layers class="left-nav-button">
       <font-awesome-icon
         :icon="['far', 'circle']"
+        :class="{
+          'inactive': !active,
+        }"
         transform="grow-8"
         style="color: #FEC010;"
-        v-show="isActive"
       />
       <font-awesome-icon icon="circle" transform="shrink-7" :mask="['fas', 'circle']" />
     </font-awesome-layers>
@@ -14,9 +16,12 @@
 
 <script>
 import { FontAwesomeIcon, FontAwesomeLayers } from '@fortawesome/vue-fontawesome';
+import Emitter from '../mixins/emitter';
 
 export default {
   name: 'LeftNavButton',
+  inject: ['navMenu'],
+  mixins: [Emitter],
   components: {
     FontAwesomeIcon,
     FontAwesomeLayers,
@@ -24,32 +29,37 @@ export default {
   props: {
     index: {
       type: String,
-      required: true
+      required: true,
     },
     route: [String, Object],
-    active: Boolean,
   },
   computed: {
-    isActive() {
+    active() {
       return this.index === this.navMenu.activeIndex;
     },
   },
   methods: {
-    setSelection(){
-      this.dispatch('LeftNavMenu', 'item-click', this);
-      this.$emit('click', this);
+    setSelection() {
+      this.navMenu.activeIndex = this.index;
+      this.$emit('item-click', this);
     },
   },
   mounted() {
-    this.rootMenu.addItem(this);
+    this.navMenu.addItem(this);
   },
   beforeDestroy() {
-    this.rootMenu.removeItem(this);
+    this.navMenu.removeItem(this);
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+  .is-active {
+    display: inline-block;
+  }
 
+  .inactive {
+    display: none;
+  }
 </style>

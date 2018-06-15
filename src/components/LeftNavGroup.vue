@@ -33,7 +33,6 @@ export default {
       const item = this.items[this.defaultActive];
       if (item) {
         this.activeIndex = item.index;
-        //this.initOpenedMenu();
       } else {
         this.activeIndex = null;
       }
@@ -45,15 +44,14 @@ export default {
       delete this.items[item.index];
     },
     handleItemClick(item) {
-      const { index, indexPath } = item;
       const oldActiveIndex = this.activeIndex;
 
       this.activeIndex = item.index;
-      this.$emit('select', index, indexPath, item);
 
       if (this.router) {
         this.routeToItem(item, (error) => {
           this.activeIndex = oldActiveIndex;
+          // eslint-disable-next-line
           if (error) console.error(error);
         });
       }
@@ -63,12 +61,12 @@ export default {
       try {
         this.$router.push(route, () => {}, onError);
       } catch (e) {
+        // eslint-disable-next-line
         console.error(e);
       }
     },
   },
   mounted() {
-    this.initOpenedMenu();
     this.$on('item-click', this.handleItemClick);
     this.$watch('items', this.updateActiveIndex);
   },
