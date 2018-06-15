@@ -93,7 +93,7 @@
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 
 export default {
-  name: 'HelloWorld',
+  name: 'Recruiting',
   methods: {
     done() {
       this.$notify({
@@ -109,7 +109,7 @@ export default {
   },
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: 'Welcome to Staffing and Productivity',
     };
   },
 };

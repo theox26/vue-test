@@ -42,6 +42,7 @@ export default {
     setSelection() {
       this.navMenu.activeIndex = this.index;
       this.$emit('item-click', this);
+      this.$router.push({ name: this.route });
     },
   },
   mounted() {

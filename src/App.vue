@@ -6,8 +6,8 @@
           <font-awesome-icon icon="bars" size="lg" />
         </div>
         <left-nav-menu>
-          <left-nav-button index="1" />
-          <left-nav-button index="2" />
+          <left-nav-button index="1" route="Recruiting" />
+          <left-nav-button index="2" route="Staffing" />
         </left-nav-menu>
       </el-aside>
       <transition name="fade" mode="out-in" appear>
