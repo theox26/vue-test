@@ -5,8 +5,10 @@
         <div class="hamburger-box" @click="viewMenu = !viewMenu">
           <font-awesome-icon icon="bars" size="lg" />
         </div>
-        <left-nav-button />
-        <left-nav-button selected="true" />
+        <left-nav-menu>
+          <left-nav-button index="1" />
+          <left-nav-button index="2" />
+        </left-nav-menu>
       </el-aside>
       <transition name="fade" mode="out-in" appear>
         <el-aside width="200px" v-show="viewMenu" class="nav-menu-vertical">
@@ -79,7 +81,7 @@
 </template>
 
 <script>
-import { FontAwesomeIcon, FontAwesomeLayers } from '@fortawesome/vue-fontawesome';
+import LeftNavMenu from './components/LeftNavGroup.vue';
 import LeftNavButton from './components/LeftNavButton.vue';
 
 export default {
@@ -90,8 +92,7 @@ export default {
     };
   },
   components: {
-    FontAwesomeIcon,
-    FontAwesomeLayers,
+    LeftNavMenu,
     LeftNavButton,
   },
   methods: {
