@@ -1,17 +1,19 @@
 <template>
-  <div @click="setSelection" class="nav-button-outer">
-    <font-awesome-layers class="left-nav-button">
-      <font-awesome-icon
-        :icon="['far', 'circle']"
-        :class="{
-          'inactive': !active,
-        }"
-        transform="grow-8"
-        style="color: #FEC010;"
-      />
-      <font-awesome-icon icon="circle" transform="shrink-7" :mask="['fas', 'circle']" />
-    </font-awesome-layers>
-  </div>
+  <el-tooltip class="tooltip" effect="dark" :content="route" placement="right">
+    <div @click="setSelection" class="nav-button-outer">
+      <font-awesome-layers class="left-nav-button">
+        <font-awesome-icon
+          :icon="['far', 'circle']"
+          :class="{
+            'inactive': !active,
+          }"
+          transform="grow-8"
+          style="color: #FEC010;"
+        />
+        <font-awesome-icon icon="circle" transform="shrink-7" :mask="['fas', 'circle']" />
+      </font-awesome-layers>
+    </div>
+  </el-tooltip>
 </template>
 
 <script>
@@ -62,5 +64,9 @@ export default {
 
   .inactive {
     display: none;
+  }
+
+  .nav-button-outer {
+    cursor: pointer;
   }
 </style>
